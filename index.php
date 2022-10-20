@@ -38,7 +38,7 @@ try {
            <td><?php echo $product['Name'] ?></td> <!--Accedim a Name-->
            <td><?php echo $product['Descripcion'] ?></td> <!--Accedim a Description-->
            <td><?php echo $product['Price'] ?></td> <!--Accedim a Price -->
-           <td><a href="plantilla.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-primary">Edit</button></a></td>
+           <td><a href="edit.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-primary">Edit</button></a></td>
            <td><a href="delete.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
        </tr>
    <?php } ?>
