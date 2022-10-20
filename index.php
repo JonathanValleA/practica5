@@ -45,7 +45,7 @@ try {
 
     </tbody>
 </table>
-<!-- SECCIÓ PER AFEGIR PRODUCTES --> 
+<!-- SECCIÓ PER AFEGIR PRODUCTES  --> 
 <div class="container p-4">
 		<div class="row">
 			<div class="col-md-4">
