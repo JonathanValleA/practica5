@@ -1,5 +1,5 @@
 
-//Pàgina on es ficaran les dades a actualitzar
+<!--Pàgina on es ficaran les dades a actualitzar-->
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -25,17 +25,16 @@
 
         
         <?php
-        try {
-            //Connexió a la BBDD
-            $myCon = new PDO('mysql:host=localhost; dbname=products', 'root', '');
-            //Creem la consulta sql
-            $sql ="SELECT * FROM producto";
-        
-        } catch (PDOException $e) {
-            echo "error de connexió: " . $e->getMessage() . "<br/>";
-            die();
-        }
-        
+            $id=$_GET['id'];
+            try {
+                //Connexió a la BBDD
+                $myCon = new PDO('mysql:host=localhost; dbname=products', 'root', '');
+                //Creem la consulta sql
+                $sql ="SELECT * FROM producto WHERE id='$id'";
+            } catch (PDOException $e) {
+                echo "error de connexió: " . $e->getMessage() . "<br/>";
+                die();
+            }
         ?>
 
         <?php foreach ($myCon->query($sql) as $i => $product){ ?>
