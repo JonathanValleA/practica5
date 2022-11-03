@@ -19,6 +19,7 @@ try {
 <title>Hola</title>
 </head>
 <body>
+<!-- Tabla -->
 <table class="table">
     <thead>
     	<tr>
@@ -27,6 +28,7 @@ try {
           <th scope="col">Name</th>
           <th scope="col">Description</th>
           <th scope="col">Price</th>
+          <th scope="col">Q_sold</th>
         </tr>
     </thead>
     <tbody>
@@ -38,6 +40,7 @@ try {
            <td><?php echo $product['Name'] ?></td> <!--Accedim a Name-->
            <td><?php echo $product['Descripcion'] ?></td> <!--Accedim a Description-->
            <td><?php echo $product['Price'] ?></td> <!--Accedim a Price -->
+           <td><?php echo $product['Qsold'] ?></td>
            <td><a href="edit.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-primary">Edit</button></a></td>
            <td><a href="delete.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
        </tr>
@@ -61,6 +64,10 @@ try {
 						<div class=form-group>
 							<input type="text" name="price" class="form-control" placeholder="price">
 						</div>
+                        <div class=form-group>
+							<input type="text" name="qsold" class="form-control" placeholder="qsold">
+						</div>
+						
 						<input type="submit" class="btn btn-success btn-block" name="add_product" value="+ Producte">
 					</form>
 				</div>
