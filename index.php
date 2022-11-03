@@ -3,7 +3,7 @@ try {
     //Connexió a la BBDD
     $myCon = new PDO('mysql:host=localhost; dbname=products', 'root', '');
     //Creem la consulta sql
-    $sql ="SELECT * FROM producto";
+    $sql ="SELECT * FROM products";
  
  } catch (PDOException $e) {
     echo "error de connexió: " . $e->getMessage() . "<br/>";
@@ -31,15 +31,15 @@ try {
     </thead>
     <tbody>
 	
-    <?php foreach ($myCon->query($sql) as $i => $product){ ?>
+    <?php foreach ($myCon->query($sql) as $i => $products){ ?>
        <tr>
            <th scope="row"><?php echo $i +1 ?></th> <!-- augmentem el index i -->
-           <td><?php echo $product['id'] ?></td> <!--Accedim a NumID -->
-           <td><?php echo $product['Name'] ?></td> <!--Accedim a Name-->
-           <td><?php echo $product['Descripcion'] ?></td> <!--Accedim a Description-->
-           <td><?php echo $product['Price'] ?></td> <!--Accedim a Price -->
-           <td><a href="edit.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-primary">Edit</button></a></td>
-           <td><a href="delete.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
+           <td><?php echo $products['id'] ?></td> <!--Accedim a NumID -->
+           <td><?php echo $products['Name'] ?></td> <!--Accedim a Name-->
+           <td><?php echo $products['Description'] ?></td> <!--Accedim a Description-->
+           <td><?php echo $products['Price'] ?></td> <!--Accedim a Price -->
+           <td><a href="edit.php?id=<?php echo $products['id']?>"><button type="button" class="btn btn-outline-primary">Edit</button></a></td>
+           <td><a href="delete.php?id=<?php echo $products['id']?>"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
        </tr>
    <?php } ?>
 
