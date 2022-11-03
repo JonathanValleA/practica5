@@ -7,9 +7,10 @@
         $nombre = $_POST['name'];
         $description = $_POST['description'];
         $precio = $_POST['price'];
+        $qsold = $_POST['qsold'];
 
         //Creem la consulta sql
-        $agregar = "INSERT INTO producto(Name, Descripcion, price) VALUES('$nombre', '$description', '$precio')";
+        $agregar = "INSERT INTO producto(Name, Descripcion, price, qsold) VALUES('$nombre', '$description', '$precio', '$qsold')";
         $stmt = $myCon->prepare($agregar);
         $stmt->execute();
     } catch (PDOException $e) {
